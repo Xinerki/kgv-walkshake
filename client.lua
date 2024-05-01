@@ -4,7 +4,7 @@ carBurnout = true
 
 Citizen.CreateThread(function()
 	while true do Wait(0)
-		if not IsPedInAnyVehicle(PlayerPedId(), false) and GetEntitySpeed(PlayerPedId()) >= 0.5 and GetFollowPedCamViewMode() ~= 4 then
+		if not IsEntityDead(PlayerPedId()) and not IsPedInAnyVehicle(PlayerPedId(), false) and GetEntitySpeed(PlayerPedId()) >= 0.5 and GetFollowPedCamViewMode() ~= 4 then
 			if playerMoving == false then
 				ShakeGameplayCam("ROAD_VIBRATION_SHAKE", 0.5)
 				playerMoving = true
